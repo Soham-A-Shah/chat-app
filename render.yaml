@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: project-chat-backend
+    runtime: node
+    rootDir: server
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: CORS_ORIGIN
+        value: https://your-vercel-app.vercel.app
+      - key: SOCKET_CORS_ORIGIN
+        value: https://your-vercel-app.vercel.app
